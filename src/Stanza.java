@@ -123,12 +123,24 @@ public class Stanza {
     		if (direzione!=null)
     			risultato.append(" " + direzione);
     	risultato.append("\nAttrezzi nella stanza: ");
-    	for (Attrezzo attrezzo : this.attrezzi) {
+    	//----------------------------------------------------------------------MODIFICHE ------------------------------------------------------------------
+	   /* for (Attrezzo attrezzo : this.attrezzi) { //PEZZO VECCHIO DEL CODICE 
     		risultato.append(attrezzo.toString()+" ");
+    	}*/
+	    //--------------- NUOVE MODIFICHE DEL CODICE 
+    	int i=0;
+    	Attrezzo attrezzo;
+    	attrezzo=this.attrezzi[i];
+    	while(attrezzo!=null) {
+    		risultato.append(attrezzo.toString()+" ");
+    		i++;
+    		attrezzo=this.attrezzi[i];
     	}
+    	
+    	//-------------------------- FINE NUOVE MODIFICHE DEL CODICE
     	return risultato.toString();
     }
-
+    	
     /**
 	* Controlla se un attrezzo esiste nella stanza (uguaglianza sul nome).
 	* @return true se l'attrezzo esiste nella stanza, false altrimenti.
